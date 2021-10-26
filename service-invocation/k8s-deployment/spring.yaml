@@ -1,0 +1,42 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: springapp
+  labels:
+    app: spring
+spec:
+  selector:
+    app: spring
+  ports:
+  - protocol: TCP
+    port: 8081
+    targetPort: 8080
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springapp
+  labels:
+    app: spring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring
+  template:
+    metadata:
+      labels:
+        app: spring
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "springapp"
+        dapr.io/app-port: "8080"
+    spec:
+      containers:
+      - name: node
+        image: rich0423/dapr-spring-app:latest
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always

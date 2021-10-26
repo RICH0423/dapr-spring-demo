@@ -1,0 +1,10 @@
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+dapr:
+  port: 3500
+  orderUrl: http://localhost:${dapr.port}/v1.0/invoke/nodeapp/method
