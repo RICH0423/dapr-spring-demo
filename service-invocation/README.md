@@ -1,5 +1,7 @@
 # Service Invocation with Dapr 
 
+![](./image/system-architecture.png)
+
 ## The description of services
 
 | Attribute                   | Details |
