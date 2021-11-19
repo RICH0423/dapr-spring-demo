@@ -1,0 +1,17 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: kafka-pubsub
+  namespace: default
+spec:
+  type: pubsub.kafka
+  version: v1
+  metadata:
+  - name: brokers 
+    value: "localhost:9092"
+  - name: consumerGroup
+    value: "group1"
+  - name: clientID # Optional. Used as client tracing ID by Kafka brokers.
+    value: "springboot-app"
+  - name: authRequired # Required.
+    value: "false"
