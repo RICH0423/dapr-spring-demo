@@ -4,9 +4,11 @@
 
 - To subscribe to topics, start a web server and listen on the following GET endpoint: **/dapr/subscribe** and the response format must contain the following fields:
 ```json
+{
   "pubsubname": "pubsub-component",
   "topic": "input-topic",
   "route": "api/input"
+}
 ```
 
 sample code:
