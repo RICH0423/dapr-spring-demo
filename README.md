@@ -6,8 +6,8 @@ Java and Spring Boot.
 
 | Type                   | Link |
 |-----------------------------|---------|
-| Service Invocation and State Management        | [service-invocation](./service-invocation)  |
-| Pub/Sub           | |
+| Service Invocation and State Management | [service-invocation](./service-invocation)  |
+| Pub/Sub           |[pubsub](./pubsub) |
 
 
 ## Getting started with the demo
